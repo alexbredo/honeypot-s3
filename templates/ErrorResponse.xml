@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Error>
+	<Code>{{ escape(error['Code']) }}</Code>
+	<Message>{{ escape(error['Message']) }}</Message>
+	<RequestId>{{ escape(error['RequestId']) }}</RequestId>
+	<Resource>{{ escape(error['Resource']) }}</Resource> 
+	<HostId>{{ escape(error['HostId']) }}</HostId>
+</Error>

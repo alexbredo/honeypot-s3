@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ListBucketResult xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+	<Name>{{ escape(Name) }}</Name>
+	<Prefix>{{ escape(Prefix) }}/</Prefix>
+	<Marker></Marker>
+	<MaxKeys>1000</MaxKeys>
+	<Delimiter>/</Delimiter>
+	<IsTruncated>false</IsTruncated>
+	{% for content in contents %}
+	<Contents>
+		<Key>{{ escape(content['Key']) }}</Key>
+		<LastModified>{{ escape(content['LastModified']) }}</LastModified>
+		<ETag>{{ escape(content['ETag']) }}</ETag>
+		<Size>{{ escape(content['Size']) }}</Size>
+		<StorageClass>{{ escape(content['StorageClass']) }}</StorageClass>
+		<Owner>
+			<ID>{{ escape(content['Owner']['ID']) }}</ID>
+			<DisplayName>{{ escape(content['Owner']['DisplayName']) }}</DisplayName>
+		</Owner>
+	</Contents>
+	{% end %}
+	
+	{% for dir in directories %}
+	<CommonPrefixes>
+		<Prefix>{{ escape(dir) }}/</Prefix>
+	</CommonPrefixes>
+	{% end %}
+</ListBucketResult>

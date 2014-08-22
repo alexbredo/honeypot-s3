@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AccessControlPolicy>
+	<Owner>
+		<ID>{{ escape(owner['ID']) }}</ID>
+		<DisplayName>{{ escape(owner['DisplayName']) }}</DisplayName>
+	</Owner>
+	<AccessControlList>
+	<Grant>
+		<Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CanonicalUser">
+			<ID>{{ escape(owner['ID']) }}</ID>
+			<DisplayName>{{ escape(owner['DisplayName']) }}</DisplayName>
+		</Grantee>
+		<Permission>{{ escape(grant['Permission']) }}</Permission>
+	</Grant>
+	</AccessControlList>
+</AccessControlPolicy> 
