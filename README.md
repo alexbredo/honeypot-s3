@@ -13,7 +13,7 @@ Dependencies:
 
 Usage:
 ```bash
-python3 camera.py
+python3 s3server.py
 ```
 
 TODO:
